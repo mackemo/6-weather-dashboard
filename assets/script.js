@@ -27,7 +27,8 @@ function searchAPI() {
 
                     .then(function(weatherResults) {
                         console.log(weatherResults);
-                        let dateData = weatherResults.list[0].dt_txt.split(' ')[0];
+
+                        let dateData = dayjs(weatherResults.list[0].dt_txt.split(' ')[0]).format('M/DD/YYYY');
                         let tempData = weatherResults.list[0].main.temp;
                         let windData = weatherResults.list[0].wind.speed;
                         let humData = weatherResults.list[0].main.humidity;
@@ -46,6 +47,6 @@ function searchAPI() {
             })
     })
 }
-    
+
 
 searchAPI();
