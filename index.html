@@ -14,18 +14,33 @@
         <h1 class="text-center text-white fw-bold">Weather Dashboard</h1>
     </header>
 
-    <aside class="m-2">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-3">
-                <label class="fw-bolder" for="search-input">Search for a City:</label>
-                <input type="text" name="search-input" class="w-100 p-2" id="search-input" placeholder="Nashville"/>
-                <button class="w-100 btn-sm" id="search-btn">Search</button>
+    <div class="d-flex flex-row">
+        <aside class="col-12 col-md-6 col-lg-3 m-2">
+            <div>
+                <div>
+                    <label class="fw-bolder" for="search-input">Search for a City:</label>
+                    <input type="text" name="search-input" class="w-100 p-2" id="search-input" placeholder="Nashville"/>
+                    <button class="w-100 btn-sm" id="search-btn">Search</button>
+                </div>
             </div>
-        </div>
-    </aside>
+        </aside>
+        
+        <main class="col-12 col-md-6 col-lg-9 border border-dark m-2 p-2">
+            <div>
+                <div>
+                    <h3 class="fw-bolder" id="main-city"></h3>
+                    <p class="fw-medium" id="main-temp"></p>
+                    <p class="fw-medium" id="main-wind"></p>
+                    <p class="fw-medium" id="main-hum"></p>
+                </div>
+            </div>
+        </main>
+    </div>  
+
 </body>
 
 <script src="./assets/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
