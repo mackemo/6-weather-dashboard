@@ -14,26 +14,28 @@
         <h1 class="text-center text-white fw-bold">Weather Dashboard</h1>
     </header>
 
-    <aside class="m-2">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-3">
-                <label class="fw-bolder" for="search-input">Search for a City:</label>
-                <input type="text" name="search-input" class="w-100 p-2" id="search-input" placeholder="Nashville"/>
-                <button class="w-100 btn-sm" id="search-btn">Search</button>
-            </div>
-        </div>
-    </aside>
-
-    <main>
-        <div>
+    <div class="d-flex flex-row">
+        <aside class="col-12 col-md-6 col-lg-3 m-2">
             <div>
-                <h3 id="main-city"></h3>
-                <p id="main-temp"></p>
-                <p id="main-wind"></p>
-                <p id="main-hum"></p>
+                <div>
+                    <label class="fw-bolder" for="search-input">Search for a City:</label>
+                    <input type="text" name="search-input" class="w-100 p-2" id="search-input" placeholder="Nashville"/>
+                    <button class="w-100 btn-sm" id="search-btn">Search</button>
+                </div>
             </div>
-        </div>
-    </main>
+        </aside>
+        
+        <main class="col-12 col-md-6 col-lg-9">
+            <div>
+                <div>
+                    <h3 id="main-city"></h3>
+                    <p id="main-temp"></p>
+                    <p id="main-wind"></p>
+                    <p id="main-hum"></p>
+                </div>
+            </div>
+        </main>
+    </div>  
 
 </body>
 
