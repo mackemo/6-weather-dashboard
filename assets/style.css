@@ -21,3 +21,8 @@ label {
 #search-btn:hover {
     background-color: rgb(9, 9, 77); 
 }
+
+#main-city {
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
