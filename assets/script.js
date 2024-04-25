@@ -29,7 +29,8 @@ function searchAPI() {
                         console.log(weatherResults);
 
                         let dateData = dayjs(weatherResults.list[0].dt_txt.split(' ')[0]).format('M/DD/YYYY');
-                        let tempData = weatherResults.list[0].main.temp;
+                        let tempDataK = weatherResults.list[0].main.temp;
+                        let tempDataF = ((tempDataK - 273.15) * 9/5) + 32;
                         let windData = weatherResults.list[0].wind.speed;
                         let humData = weatherResults.list[0].main.humidity;
 
@@ -39,14 +40,13 @@ function searchAPI() {
                         let hum = document.getElementById('main-hum');
 
                         cityInfo.textContent = city + ' ' + `(${dateData})`;
-                        temp.textContent = tempData;
-                        wind.textContent = windData;
-                        hum.textContent = humData;
+                        temp.textContent = `Temp: ${tempDataF} °F`;
+                        wind.textContent = `Wind: ${windData} MPH`;
+                        hum.textContent = `Humidity: ${humData} %`;
 
                     })
             })
     })
 }
-
 
 searchAPI();
