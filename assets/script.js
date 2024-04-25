@@ -30,7 +30,7 @@ function searchAPI() {
 
                         let dateData = dayjs(weatherResults.list[0].dt_txt.split(' ')[0]).format('M/DD/YYYY');
                         let tempDataK = weatherResults.list[0].main.temp;
-                        let tempDataF = ((tempDataK - 273.15) * 9/5) + 32;
+                        let tempDataF = (((tempDataK - 273.15) * 9/5) + 32).toFixed(2);
                         let windData = weatherResults.list[0].wind.speed;
                         let humData = weatherResults.list[0].main.humidity;
 
@@ -43,7 +43,6 @@ function searchAPI() {
                         temp.textContent = `Temp: ${tempDataF} °F`;
                         wind.textContent = `Wind: ${windData} MPH`;
                         hum.textContent = `Humidity: ${humData} %`;
-
                     })
             })
     })
