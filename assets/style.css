@@ -1,0 +1,23 @@
+header {
+    background-image: linear-gradient(to right, rgb(109, 109, 247) , rgb(9, 9, 77));
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 8px;
+}
+
+label {
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#search-btn {
+    background-color: rgb(109, 109, 247); 
+    color: white; 
+    border: none;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px; 
+}
+
+#search-btn:hover {
+    background-color: rgb(9, 9, 77); 
+}
