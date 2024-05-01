@@ -43,9 +43,16 @@ function searchAPI() {
                         temp.textContent = `Temp: ${tempDataF} °F`;
                         wind.textContent = `Wind: ${windData} MPH`;
                         hum.textContent = `Humidity: ${humData} %`;
+
+                        displayFiveDay();
+        
                     })
             })
     })
+}
+
+function displayFiveDay() {
+
 }
 
 searchAPI();
