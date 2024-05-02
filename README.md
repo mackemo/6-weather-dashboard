@@ -19,9 +19,9 @@ https://mackemo.github.io/6-weather-dashboard/
 Link to public Github repository for this challenge.
 https://github.com/mackemo/6-weather-dashboard
 
-## Installation
+## Technologies Used
 
-N/A
+OpenWeather API
 
 ## Usage
 
