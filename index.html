@@ -11,63 +11,69 @@
 
 <body>
     <header>
-        <h1 class="text-center text-white fw-bold">Weather Dashboard</h1>
+        <h1 class="weather text-center text-white fw-bold">Weather Dashboard</h1>
     </header>
+
 
     <div class="d-flex flex-row">
         <aside class="col-12 col-md-6 col-lg-3 m-2">
-            <div>
-                <div>
-                    <label class="fw-bolder" for="search-input">Search for a City:</label>
-                    <input type="text" name="search-input" class="w-100 p-2" id="search-input" placeholder="Nashville"/>
-                    <button class="w-100 btn-sm" id="search-btn">Search</button>
-                </div>
+             <div>
+                <label class="fw-bolder" for="search-input">Search for a City:</label>
+                <input type="text" name="search-input" class="w-100 p-2" id="search-input" placeholder="Nashville"/>
+                <button class="w-100 btn-sm" id="search-btn">Search</button>
             </div>
         </aside>
-        
-        <main class="col-12 col-md-6 col-lg-9 border border-dark m-2 p-2">
+                
+        <main class="col-12 col-md-6 col-lg-8 border border-dark m-2 p-2">
             <div>
-                <div>
-                    <h3 class="fw-bolder" id="main-city"></h3>
-                    <p class="fw-medium" id="main-temp"></p>
-                    <p class="fw-medium" id="main-wind"></p>
-                    <p class="fw-medium" id="main-hum"></p>
-                </div>
+                <h3 class="fw-bolder" id="main-city"></h3>
+                <p class="fw-medium" id="main-temp"></p>
+                <p class="fw-medium" id="main-wind"></p>
+                <p class="fw-medium" id="main-hum"></p>
             </div>
         </main>
     </div>  
+    
+    <br>
 
-    <div>
-        <h3 class="fw-bolder" id="five-city-2"></h3>
-        <p class="fw-medium" id="five-temp-2"></p>
-        <p class="fw-medium" id="five-wind-2"></p>
-        <p class="fw-medium" id="five-hum-2"></p>
-    </div>
-    <div>
-        <h3 class="fw-bolder" id="five-city-8"></h3>
-        <p class="fw-medium" id="five-temp-8"></p>
-        <p class="fw-medium" id="five-wind-8"></p>
-        <p class="fw-medium" id="five-hum-8"></p>
-    </div>
-    <div>
-        <h3 class="fw-bolder" id="five-city-16"></h3>
-        <p class="fw-medium" id="five-temp-16"></p>
-        <p class="fw-medium" id="five-wind-16"></p>
-        <p class="fw-medium" id="five-hum-16"></p>
-    </div>
-    <div>
-        <h3 class="fw-bolder" id="five-city-24"></h3>
-        <p class="fw-medium" id="five-temp-24"></p>
-        <p class="fw-medium" id="five-wind-24"></p>
-        <p class="fw-medium" id="five-hum-24"></p>
-    </div>
-    <div>
-        <h3 class="fw-bolder" id="five-city-32"></h3>
-        <p class="fw-medium" id="five-temp-32"></p>
-        <p class="fw-medium" id="five-wind-32"></p>
-        <p class="fw-medium" id="five-hum-32"></p>
-    </div>
-
+    <section>
+        <header>
+            <h3 class="text-black fw-bold">5-Day Forecast:</h3>
+        </header>
+        <div class="d-flex flex-row">
+            <div class="col-12 col-md-6 col-lg-2 border border-dark m-2 p-2">
+                <h3 class="fw-bolder" id="five-city-2"></h3>
+                <p class="fw-medium" id="five-temp-2"></p>
+                <p class="fw-medium" id="five-wind-2"></p>
+                <p class="fw-medium" id="five-hum-2"></p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2 border border-dark m-2 p-2">
+                <h3 class="fw-bolder" id="five-city-8"></h3>
+                <p class="fw-medium" id="five-temp-8"></p>
+                <p class="fw-medium" id="five-wind-8"></p>
+                <p class="fw-medium" id="five-hum-8"></p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2 border border-dark m-2 p-2">
+                <h3 class="fw-bolder" id="five-city-16"></h3>
+                <p class="fw-medium" id="five-temp-16"></p>
+                <p class="fw-medium" id="five-wind-16"></p>
+                <p class="fw-medium" id="five-hum-16"></p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2 border border-dark m-2 p-2">
+                <h3 class="fw-bolder" id="five-city-24"></h3>
+                <p class="fw-medium" id="five-temp-24"></p>
+                <p class="fw-medium" id="five-wind-24"></p>
+                <p class="fw-medium" id="five-hum-24"></p>
+            </div>  
+            <div class="col-12 col-md-6 col-lg-2 border border-dark m-2 p-2">
+                <h3 class="fw-bolder" id="five-city-32"></h3>
+                <p class="fw-medium" id="five-temp-32"></p>
+                <p class="fw-medium" id="five-wind-32"></p>
+                <p class="fw-medium" id="five-hum-32"></p>
+            </div>
+        </div> 
+    </section>
+    
 </body>
 
 <script src="./assets/script.js"></script>

@@ -45,7 +45,7 @@ function searchAPI() {
                         hum.textContent = `Humidity: ${humData} %`;
 
 
-                        displayFiveDay(weatherResults, city);
+                        displayFiveDay(weatherResults);
 
         
                     })
@@ -53,7 +53,7 @@ function searchAPI() {
     })
 }
 
-function displayFiveDay(weatherResults, city) {
+function displayFiveDay(weatherResults) {
     let indexes = [2, 8, 16, 24, 32];
 
     for (let i = 0; i < indexes.length; i++) {
@@ -69,7 +69,7 @@ function displayFiveDay(weatherResults, city) {
     let wind = document.getElementById(`five-wind-${index}`);
     let hum = document.getElementById(`five-hum-${index}`);
                     
-    cityInfo.textContent = city + ' ' + `(${dateData})`;
+    cityInfo.textContent = `(${dateData})`;
     temp.textContent = `Temp: ${tempDataF} °F`;
     wind.textContent = `Wind: ${windData} MPH`;
     hum.textContent = `Humidity: ${humData} %`;
