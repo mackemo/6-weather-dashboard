@@ -105,7 +105,8 @@ function displayFiveDay(weatherResults) {
     temp.textContent = `Temp: ${tempDataF} °F`;
     wind.textContent = `Wind: ${windData} MPH`;
     hum.textContent = `Humidity: ${humData} %`;
-
+    
+    //weather icons 
     let ic = document.getElementById(`ic-${index}`);
     let weatherIc = fiveWeather.weather[0].description;
 
