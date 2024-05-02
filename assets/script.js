@@ -4,10 +4,6 @@ function searchAPI() {
     searchBtn.addEventListener('click', function() {
         let city = document.getElementById('search-input').value;
 
-        let cities = JSON.parse(localStorage.getItem('cities')) || [];
-        cities.push(city);
-        localStorage.setItem('cities', JSON.stringify(cities));
-
         const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=7f24f20a0a0533ff8f591e0bdf6457c2`;
 
         fetch(geoURL)
@@ -78,5 +74,6 @@ function displayFiveDay(weatherResults) {
     }
 }
 
-
 searchAPI();
+
+
