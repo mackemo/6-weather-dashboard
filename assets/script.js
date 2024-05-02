@@ -1,5 +1,7 @@
+//search button
 const searchBtn = document.getElementById('search-btn');
 
+//upon search button click, the apis run
 function searchAPI() {
     searchBtn.addEventListener('click', function() {
         let city = document.getElementById('search-input').value;
@@ -26,6 +28,7 @@ function searchAPI() {
                     .then(function(weatherResults) {
                         console.log(weatherResults);
 
+                        //after fetching weather results, get the info into variables
                         let dateData = dayjs(weatherResults.list[0].dt_txt.split(' ')[0]).format('M/DD/YYYY');
                         let tempDataK = weatherResults.list[0].main.temp;
                         let tempDataF = (((tempDataK - 273.15) * 9/5) + 32).toFixed(2);
@@ -37,23 +40,29 @@ function searchAPI() {
                         let wind = document.getElementById('main-wind');
                         let hum = document.getElementById('main-hum');
 
+                        //put the info in cooresponding id in html
                         cityInfo.textContent = city + ' ' + `(${dateData})`;
                         temp.textContent = `Temp: ${tempDataF} °F`;
                         wind.textContent = `Wind: ${windData} MPH`;
                         hum.textContent = `Humidity: ${humData} %`;
 
 
+                        //displays function below (5-day forecast)
                         displayFiveDay(weatherResults);
-
         
                     })
             })
     })
 }
 
+//function for 5-day forecast
 function displayFiveDay(weatherResults) {
+
+    //the specific array items with the new day
     let indexes = [2, 8, 16, 24, 32];
 
+
+    //for loop with the same data from weatherresults
     for (let i = 0; i < indexes.length; i++) {
     let index = indexes[i];
     let dateData = dayjs(weatherResults.list[index].dt_txt.split(' ')[0]).format('M/DD/YYYY');
@@ -67,16 +76,18 @@ function displayFiveDay(weatherResults) {
     let wind = document.getElementById(`five-wind-${index}`);
     let hum = document.getElementById(`five-hum-${index}`);
                     
-    cityInfo.textContent = `(${dateData})`;
+    cityInfo.textContent = `${dateData}`;
     temp.textContent = `Temp: ${tempDataF} °F`;
     wind.textContent = `Wind: ${windData} MPH`;
     hum.textContent = `Humidity: ${humData} %`;
     }
 }
 
+//call function
 searchAPI();
 
 
+//saved city buttons to search for each city
 let Nas = document.getElementById('search-nas');
 let Cha = document.getElementById('search-cha');
 let Kno = document.getElementById('search-kno');
