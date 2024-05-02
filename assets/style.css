@@ -1,12 +1,23 @@
+/*main webpage header*/
 .weather {
     background-image: linear-gradient(to right, rgb(109, 109, 247) , rgb(9, 9, 77));
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 8px;
 }
 
+/* search input label */
 label {
     font-size: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main {
+    margin: 10px;
+}
+
+.section {
+    margin: 10px;
+
 }
 
 #search-btn {
@@ -25,4 +36,18 @@ label {
 #main-city {
     font-size: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#main-temp, #main-wind, #main-hum {
+    font-size: 20px;
+}
+
+/* 5-day cards */
+.five {
+    background-color: rgb(58, 58, 82);
+    color: white;
+}
+
+#icon, #ic-2, #ic-8, #ic-16, #ic-24, #ic-32 {
+    font-size: 30px;
 }
