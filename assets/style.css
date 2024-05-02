@@ -47,3 +47,7 @@ label {
     background-color: rgb(58, 58, 82);
     color: white;
 }
+
+#icon, #ic-2, #ic-8, #ic-16, #ic-24, #ic-32 {
+    font-size: 30px;
+}
