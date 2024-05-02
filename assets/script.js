@@ -4,41 +4,40 @@ const searchBtn = document.getElementById('search-btn');
 //upon search button click, the apis run
 function searchAPI() {
     searchBtn.addEventListener('click', function() {
+
         let city = document.getElementById('search-input').value;
-
         const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=7f24f20a0a0533ff8f591e0bdf6457c2`;
-
+        
         fetch(geoURL)
-            .then(function(response) {
-                return response.json();
-            })
-
-            .then(function(geoResults) {
+            .then(response => response.json())
+            
+            .then(geoResults => {
                 console.log(geoResults);
                 let lat = geoResults[0].lat;
                 let lon = geoResults[0].lon;
-
                 const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=7f24f20a0a0533ff8f591e0bdf6457c2`;
-
+                
                 fetch(weatherURL)
-                    .then(function(response) {
-                        return response.json();
-                    })
+                    .then(response => response.json())
 
-                    .then(function(weatherResults) {
+                    .then(weatherResults => {
                         console.log(weatherResults);
 
                         //after fetching weather results, get the info into variables
-                        let dateData = dayjs(weatherResults.list[0].dt_txt.split(' ')[0]).format('M/DD/YYYY');
-                        let tempDataK = weatherResults.list[0].main.temp;
+                        let mainWeather = weatherResults.list[0];
+
+                        let dateData = dayjs(mainWeather.dt_txt.split(' ')[0]).format('M/DD/YYYY');
+                        let tempDataK = mainWeather.main.temp;
                         let tempDataF = (((tempDataK - 273.15) * 9/5) + 32).toFixed(2);
-                        let windData = weatherResults.list[0].wind.speed;
-                        let humData = weatherResults.list[0].main.humidity;
+                        let windData = mainWeather.wind.speed;
+                        let humData = mainWeather.main.humidity;
+
 
                         let cityInfo = document.getElementById('main-city');
                         let temp = document.getElementById('main-temp');
                         let wind = document.getElementById('main-wind');
                         let hum = document.getElementById('main-hum');
+
 
                         //put the info in cooresponding id in html
                         cityInfo.textContent = city + ' ' + `(${dateData})`;
@@ -46,15 +45,16 @@ function searchAPI() {
                         wind.textContent = `Wind: ${windData} MPH`;
                         hum.textContent = `Humidity: ${humData} %`;
 
+
                         weatherIcon(weatherResults);
 
                         //displays function below (5-day forecast)
                         displayFiveDay(weatherResults);
-        
-                    })
+                    }) 
             })
     })
 }
+
 
 //function for weather icon for main city
 function weatherIcon(weatherResults) {
@@ -76,6 +76,7 @@ function weatherIcon(weatherResults) {
     }
 }
 
+
 //function for 5-day forecast
 function displayFiveDay(weatherResults) {
 
@@ -86,24 +87,27 @@ function displayFiveDay(weatherResults) {
     //for loop with the same data from weatherresults
     for (let i = 0; i < indexes.length; i++) {
     let index = indexes[i];
-    let dateData = dayjs(weatherResults.list[index].dt_txt.split(' ')[0]).format('M/DD/YYYY');
-    let tempDataK = weatherResults.list[index].main.temp;
+    let fiveWeather = weatherResults.list[index];
+
+    let dateData = dayjs(fiveWeather.dt_txt.split(' ')[0]).format('M/DD/YYYY');
+    let tempDataK = fiveWeather.main.temp;
     let tempDataF = (((tempDataK - 273.15) * 9/5) + 32).toFixed(2);
-    let windData = weatherResults.list[index].wind.speed;
-    let humData = weatherResults.list[index].main.humidity;
+    let windData = fiveWeather.wind.speed;
+    let humData = fiveWeather.main.humidity;
                     
     let cityInfo = document.getElementById(`five-city-${index}`);
     let temp = document.getElementById(`five-temp-${index}`);
     let wind = document.getElementById(`five-wind-${index}`);
     let hum = document.getElementById(`five-hum-${index}`);
-                    
+
+    cityInfo.textContent = `(${dateData})`;
     cityInfo.textContent = `${dateData}`;
     temp.textContent = `Temp: ${tempDataF} °F`;
     wind.textContent = `Wind: ${windData} MPH`;
     hum.textContent = `Humidity: ${humData} %`;
-    
+
     let ic = document.getElementById(`ic-${index}`);
-    let weatherIc = weatherResults.list[index].weather[0].description;
+    let weatherIc = fiveWeather.weather[0].description;
 
         if (weatherIc === "clear sky") {
             ic.textContent = "☀️";
@@ -152,5 +156,3 @@ Gat.addEventListener('click', function() {
     document.getElementById('search-input').value = 'Gatlinburg';
     searchBtn.click()
 })
-
-
