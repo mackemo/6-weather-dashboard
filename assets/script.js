@@ -77,3 +77,27 @@ function displayFiveDay(weatherResults) {
 searchAPI();
 
 
+let Nas = document.getElementById('search-nas');
+let Cha = document.getElementById('search-cha');
+let Kno = document.getElementById('search-kno');
+let Gat = document.getElementById('search-gat');
+
+Nas.addEventListener('click', function() {
+    document.getElementById('search-input').value = 'Nashville';
+    searchBtn.click()
+})
+
+Cha.addEventListener('click', function() {
+    document.getElementById('search-input').value = 'Chattanooga';
+    searchBtn.click()
+})
+
+Kno.addEventListener('click', function() {
+    document.getElementById('search-input').value = 'Knoxville';
+    searchBtn.click()
+})
+
+Gat.addEventListener('click', function() {
+    document.getElementById('search-input').value = 'Gatlinburg';
+    searchBtn.click()
+})
