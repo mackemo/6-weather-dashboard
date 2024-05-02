@@ -46,6 +46,7 @@ function searchAPI() {
                         wind.textContent = `Wind: ${windData} MPH`;
                         hum.textContent = `Humidity: ${humData} %`;
 
+                        weatherIcon(weatherResults);
 
                         //displays function below (5-day forecast)
                         displayFiveDay(weatherResults);
@@ -53,6 +54,26 @@ function searchAPI() {
                     })
             })
     })
+}
+
+//function for weather icon for main city
+function weatherIcon(weatherResults) {
+    let icon = document.getElementById('icon');
+    let weatherIcon = weatherResults.list[0].weather[0].description;
+
+    if (weatherIcon === "clear sky") {
+        icon.textContent = "☀️";
+    } else if (weatherIcon.includes("clouds")) {
+        icon.textContent = "☁️";
+    } else if (weatherIcon.includes("rain")) {
+        icon.textContent = "🌧️";
+    } else if (weatherIcon.includes("thunderstorm")) {
+        icon.textContent = "🌩️";
+    } else if (weatherIcon.includes("snow")) {
+        icon.textContent = "❄️";
+    } else {
+        icon.textContent = "⛅";
+    }
 }
 
 //function for 5-day forecast
@@ -83,7 +104,9 @@ function displayFiveDay(weatherResults) {
     }
 }
 
-//call function
+
+
+//call API function
 searchAPI();
 
 
@@ -112,3 +135,5 @@ Gat.addEventListener('click', function() {
     document.getElementById('search-input').value = 'Gatlinburg';
     searchBtn.click()
 })
+
+

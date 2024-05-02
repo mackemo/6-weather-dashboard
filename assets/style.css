@@ -17,6 +17,7 @@ label {
 
 .section {
     margin: 10px;
+
 }
 
 #search-btn {
@@ -37,7 +38,13 @@ label {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#main-temp, #main-wind, #main-hum {
+    font-size: 20px;
+}
+
+/* 5-day cards */
 .five {
     background-color: rgb(58, 58, 82);
     color: white;
 }
+
