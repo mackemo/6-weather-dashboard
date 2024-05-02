@@ -51,3 +51,20 @@ label {
 #icon, #ic-2, #ic-8, #ic-16, #ic-24, #ic-32 {
     font-size: 30px;
 }
+
+@media screen and (max-width: 768px) {
+    .five-day {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1000px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .main aside,
+    .main main {
+        width: 100%; 
+    }
+}
