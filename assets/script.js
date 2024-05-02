@@ -3,8 +3,10 @@ const searchBtn = document.getElementById('search-btn');
 function searchAPI() {
     searchBtn.addEventListener('click', function() {
         let city = document.getElementById('search-input').value;
-        // let mainCity = document.getElementById('main-city');
-        // mainCity.textContent = city;
+
+        let cities = JSON.parse(localStorage.getItem('cities')) || [];
+        cities.push(city);
+        localStorage.setItem('cities', JSON.stringify(cities));
 
         const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=7f24f20a0a0533ff8f591e0bdf6457c2`;
 
