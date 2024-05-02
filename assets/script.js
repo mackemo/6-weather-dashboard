@@ -101,6 +101,23 @@ function displayFiveDay(weatherResults) {
     temp.textContent = `Temp: ${tempDataF} °F`;
     wind.textContent = `Wind: ${windData} MPH`;
     hum.textContent = `Humidity: ${humData} %`;
+    
+    let ic = document.getElementById(`ic-${index}`);
+    let weatherIc = weatherResults.list[index].weather[0].description;
+
+        if (weatherIc === "clear sky") {
+            ic.textContent = "☀️";
+        } else if (weatherIc.includes("clouds")) {
+            ic.textContent = "☁️";
+        } else if (weatherIc.includes("rain")) {
+            ic.textContent = "🌧️";
+        } else if (weatherIc.includes("thunderstorm")) {
+            ic.textContent = "🌩️";
+        } else if (weatherIc.includes("snow")) {
+            ic.textContent = "❄️";
+        } else {
+            ic.textContent = "⛅";
+        }
     }
 }
 
