@@ -6,7 +6,7 @@ function searchAPI() {
     searchBtn.addEventListener('click', function() {
 
         let city = document.getElementById('search-input').value;
-        const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=7f24f20a0a0533ff8f591e0bdf6457c2`;
+        const geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=7f24f20a0a0533ff8f591e0bdf6457c2`;
         
         fetch(geoURL)
             .then(response => response.json())
@@ -15,7 +15,7 @@ function searchAPI() {
                 console.log(geoResults);
                 let lat = geoResults[0].lat;
                 let lon = geoResults[0].lon;
-                const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=7f24f20a0a0533ff8f591e0bdf6457c2`;
+                const weatherURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=7f24f20a0a0533ff8f591e0bdf6457c2`;
                 
                 fetch(weatherURL)
                     .then(response => response.json())
