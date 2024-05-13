@@ -6,7 +6,15 @@ function searchAPI() {
     searchBtn.addEventListener('click', function() {
 
         let city = document.getElementById('search-input').value;
+
+        saveCity(city);
+        // loads cities in search history
+        loadSavedCities();
+
+        document.getElementById('search-input').value = '';
+
         const geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=7f24f20a0a0533ff8f591e0bdf6457c2`;
+        console.log(geoURL)
         
         fetch(geoURL)
             .then(response => response.json())
@@ -127,33 +135,44 @@ function displayFiveDay(weatherResults) {
 }
 
 
-
 //call API function
 searchAPI();
 
 
-//saved city buttons to search for each city
-let Nas = document.getElementById('search-nas');
-let Cha = document.getElementById('search-cha');
-let Kno = document.getElementById('search-kno');
-let Gat = document.getElementById('search-gat');
+//save city input into local storage
+function saveCity(city) {
+    let savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
 
-Nas.addEventListener('click', function() {
-    document.getElementById('search-input').value = 'Nashville';
-    searchBtn.click()
-})
+    // check to see if the same city is already in the array
+    if (!savedCities.includes(city)) {
+        savedCities.push(city);
+        localStorage.setItem('savedCities', JSON.stringify(savedCities));
+    }
+}
 
-Cha.addEventListener('click', function() {
-    document.getElementById('search-input').value = 'Chattanooga';
-    searchBtn.click()
-})
 
-Kno.addEventListener('click', function() {
-    document.getElementById('search-input').value = 'Knoxville';
-    searchBtn.click()
-})
+//create search history buttons
+function loadSavedCities() {
+    let savedCities = JSON.parse(localStorage.getItem('savedCities')) || [];
+    let searchHistory = document.getElementById('search-history');
 
-Gat.addEventListener('click', function() {
-    document.getElementById('search-input').value = 'Gatlinburg';
-    searchBtn.click()
-})
+
+    //clear existing buttons
+    searchHistory.innerHTML = '';
+
+    //create buttons for each saved city
+    savedCities.forEach(city => {
+        let button = document.createElement('button');
+        button.textContent = city;
+        button.style.width = '100%';
+
+        button.addEventListener('click', function() {
+           document.getElementById('search-input').value = city;
+           searchBtn.click();
+
+        });
+
+        searchHistory.appendChild(button);
+    });
+
+}
