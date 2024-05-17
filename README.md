@@ -4,6 +4,19 @@
 
 The sixth challenge assignment from a bootcamp where the task was to build a weather dashboard using server-side APIs.
 
+## Table of Content
+  -[Description](#Description)
+  -[Process](#Process)
+  -[Links](#Links)
+  -[Installation](#Installation)
+  -[Technologies Used](#Technologies Used)
+  -[Usage](#Usage)
+  -[Licenses](#Licenses)
+  -[Contribution](#Contribution)
+  -[Acknowledgement](#Acknowledgement)
+  -[Questions](#Questions)
+
+
 <img src="./assets/images/image.png"/>
 
 
@@ -19,6 +32,11 @@ https://mackemo.github.io/6-weather-dashboard/
 Link to public Github repository for this challenge.
 https://github.com/mackemo/6-weather-dashboard
 
+
+## Installation
+
+To install this application, copy the ssh key from my github repo and clone it into your respository.
+
 ## Technologies Used
 
 OpenWeather API
@@ -27,13 +45,13 @@ OpenWeather API
 
 This site was a practice assignment for bootcamp students but can be used to see how a simple website can be created by inspecting the webpage.
 
-## Credits
-
-N/A
-
 ## License
 
 N/A
+
+## Contribution
+  
+Contact me by email provided in Questions section.
 
 ## Acknowledgement
 
@@ -42,3 +60,10 @@ Project was done by the knowledge learned from bootcamp instructor John as well 
 
 https://www.w3schools.com/css/css3_gradients.asp
 https://www.w3schools.com/jsref/jsref_tofixed.asp#:~:text=JavaScript%20Number%20toFixed()&text=The%20toFixed()%20method%20converts,a%20specified%20number%20of%20decimals.
+
+## Questions
+
+Contact with questions at:
+  
+Email: mackenzielmoore14@gmail.com
+Click [here](https://github.com/mackemo) for Github account.
