@@ -9,7 +9,7 @@ The sixth challenge assignment from a bootcamp where the task was to build a wea
   -[Process](#Process)
   -[Links](#Links)
   -[Installation](#Installation)
-  -[Technologies Used](#Technologies Used)
+  -[TechnologiesUsed](#TechnologiesUsed)
   -[Usage](#Usage)
   -[Licenses](#Licenses)
   -[Contribution](#Contribution)
