@@ -1,3 +1,8 @@
+// when page pops up, all serach histories in local storage is displayed
+window.onload = function() {
+    loadSavedCities();
+};
+
 //search button
 const searchBtn = document.getElementById('search-btn');
 
